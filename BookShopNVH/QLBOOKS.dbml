@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBOOKS" Class="QLBOOKSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI;Initial Catalog=QLBOOKS;Integrated Security=True" SettingsObjectName="BookShopNVH.Properties.Settings" SettingsPropertyName="QLBOOKSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Books" Member="Books">
+    <Type Name="Book">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Tacgia" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LoaiSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TypeBook_Book" Member="TypeBook" ThisKey="LoaiSach" OtherKey="ID" Type="TypeBook" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Taikhoan" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TenSinhVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MSSV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeBooks" Member="TypeBooks">
+    <Type Name="TypeBook">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TheLoai" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="TypeBook_Book" Member="Books" ThisKey="ID" OtherKey="LoaiSach" Type="Book" />
+    </Type>
+  </Table>
+</Database>
