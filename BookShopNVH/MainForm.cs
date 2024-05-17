@@ -72,16 +72,61 @@ namespace BookShopNVH
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+        void LoadDataBorrowBooks()
+        {
+            db = new QLBOOKSDataContext();
+            var borrowData = db.Borrows.Select(x => new
+            {
+                x.ID,
+                x.User.MSSV,
+                x.Book.TenSach,
+                x.Quantity,
+                x.fromDate,
+                x.toDate,
+                x.Price
+            }).ToList();
+            var formattedData = borrowData.Select(x => new
+            {
+                x.ID,
+                x.MSSV,
+                x.TenSach,
+                x.Quantity,
+                fromDate = x.fromDate.HasValue ? x.fromDate.Value.ToString("MM/dd/yyyy") : "N/A",
+                toDate = x.toDate.HasValue ? x.toDate.Value.ToString("MM/dd/yyyy") : "N/A",
+                x.Price
+            }).ToList();
+            dgvBookBorrow.DataSource = formattedData;
+            dgvBookBorrow.Columns["IDBorrow"].DisplayIndex = 0;
+            dgvBookBorrow.Columns["MSSV"].DisplayIndex = 1;
+            dgvBookBorrow.Columns["SachBorrow"].DisplayIndex = 2;
+            dgvBookBorrow.Columns["SoLuongBorrow"].DisplayIndex = 3;
+            dgvBookBorrow.Columns["fromDate"].DisplayIndex = 4;
+            dgvBookBorrow.Columns["toDate"].DisplayIndex = 5;
+            dgvBookBorrow.Columns["GiaBorrow"].DisplayIndex = 6;
+            dgvBookBorrow.Columns["GiveBack"].DisplayIndex = 7;
+
+        }
         void LoadDataBooks()
         {
+            db = new QLBOOKSDataContext();
             dgvBook.DataSource = db.Books.Select(x=> new {x.ID,x.TenSach,x.Tacgia,x.Price,x.SoLuong,x.TypeBook.TheLoai}).ToList();
+            dgvBook.Columns["IDBook"].DisplayIndex = 0;
+            dgvBook.Columns["Tacgia"].DisplayIndex = 1;
+            dgvBook.Columns["TenSach"].DisplayIndex = 2;
+            dgvBook.Columns["LoaiSach"].DisplayIndex = 3;
+            dgvBook.Columns["SoLuong"].DisplayIndex = 4;
+            dgvBook.Columns["Gia"].DisplayIndex = 5;
+            dgvBook.Columns["Edit"].DisplayIndex = 6;
+            dgvBook.Columns["Delete"].DisplayIndex = 7;
         }
         void LoadDataTypeBooks()
         {
+            db = new QLBOOKSDataContext();
             dgvTypeBook.DataSource = db.TypeBooks.ToList();
         }
         void LoadUsers()
         {
+            db = new QLBOOKSDataContext();
             dgvUser.DataSource = db.Users.ToList();
         }
 
@@ -104,6 +149,7 @@ namespace BookShopNVH
             LoadDataCategoriesBooks();
             LoadDataTypeBooks();
             LoadUsers();
+            LoadDataBorrowBooks();
         }
 
         private void cbbCategoriesBook_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,7 +178,7 @@ namespace BookShopNVH
            
             if (dgvBook.Columns[e.ColumnIndex].Name=="Edit" && e.RowIndex>=0)
             {
-                int ID = int.Parse(dgvBook["ID", e.RowIndex].Value.ToString());
+                int ID = int.Parse(dgvBook["IDBook", e.RowIndex].Value.ToString());
                 var book = db.Books.SingleOrDefault(x => x.ID == ID);
                 EditBookForm frm = new EditBookForm(book);
                 frm.Show();
@@ -142,7 +188,7 @@ namespace BookShopNVH
             {
                 if (MessageBox.Show("Are you sure Delete row ?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int ID = int.Parse(dgvBook["ID", e.RowIndex].Value.ToString());
+                    int ID = int.Parse(dgvBook["IDBook", e.RowIndex].Value.ToString());
                     var book = db.Books.SingleOrDefault(x => x.ID == ID);
                     if (book != null)
                     {
@@ -200,27 +246,128 @@ namespace BookShopNVH
         {
             if (dgvUser.Columns[e.ColumnIndex].Name == "EditUser" && e.RowIndex >= 0)
             {
-                int ID = int.Parse(dgvUser["IDTypeBook", e.RowIndex].Value.ToString());
+                int ID = int.Parse(dgvUser["IDUser", e.RowIndex].Value.ToString());
                 var user = db.Users.SingleOrDefault(x => x.ID == ID);
                 EditUserForm frm = new EditUserForm(user);
                 frm.ShowDialog();
-                LoadDataTypeBooks();
+                LoadUsers();
             }
             else if (dgvUser.Columns[e.ColumnIndex].Name == "DeleteUser" && e.RowIndex >= 0)
             {
                 if (MessageBox.Show("Are you sure Delete row ?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int ID = int.Parse(dgvUser["IDTypeBook", e.RowIndex].Value.ToString());
+                    int ID = int.Parse(dgvUser["IDUser", e.RowIndex].Value.ToString());
                     var user = db.Users.SingleOrDefault(x => x.ID == ID);
                     if (user != null)
                     {
                         db.Users.DeleteOnSubmit(user);
                         db.SubmitChanges();
-                        LoadDataTypeBooks();
+                        LoadUsers();
                     }
 
                 }
             }
+        }
+
+        private void btnCreateBorrowBook_Click(object sender, EventArgs e)
+        {
+            AddBorrowBook frm = new AddBorrowBook();
+            frm.ShowDialog();
+            LoadDataBorrowBooks();
+        }
+
+        private void dgvBookBorrow_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvBookBorrow.Columns[e.ColumnIndex].Name == "GiveBack" && e.RowIndex >= 0)
+            {
+                int ID = int.Parse(dgvBookBorrow["IDBorrow", e.RowIndex].Value.ToString());
+                var borrow = db.Borrows.SingleOrDefault(x=>x.ID == ID);
+                //Cập nhật Số lượng sách đã trả
+                var book = db.Books.SingleOrDefault(x => x.ID == borrow.IDBooks);
+                book.SoLuong += borrow.Quantity;
+                db.Borrows.DeleteOnSubmit(borrow);
+                db.SubmitChanges();
+                LoadDataBorrowBooks();
+                LoadDataBooks();
+            }
+        }
+
+        private void txtMSSVBorrow_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtMSSVBorrow.Text))
+            {
+                LoadDataBorrowBooks();
+            }
+            else
+            {
+
+
+                var borrowData = db.Borrows.Select(x => new
+                {
+                    x.ID,
+                    x.User.MSSV,
+                    x.Book.TenSach,
+                    x.Quantity,
+                    x.fromDate,
+                    x.toDate,
+                    x.Price
+                }).Where(x => x.MSSV.Contains(txtMSSVBorrow.Text)).ToList();
+                var formattedData = borrowData.Select(x => new
+                {
+                    x.ID,
+                    x.MSSV,
+                    x.TenSach,
+                    x.Quantity,
+                    fromDate = x.fromDate.HasValue ? x.fromDate.Value.ToString("MM/dd/yyyy") : "N/A",
+                    toDate = x.toDate.HasValue ? x.toDate.Value.ToString("MM/dd/yyyy") : "N/A",
+                    x.Price
+                }).ToList();
+                dgvBookBorrow.DataSource = formattedData;
+                dgvBookBorrow.Columns["IDBorrow"].DisplayIndex = 0;
+                dgvBookBorrow.Columns["MSSV"].DisplayIndex = 1;
+                dgvBookBorrow.Columns["SachBorrow"].DisplayIndex = 2;
+                dgvBookBorrow.Columns["SoLuongBorrow"].DisplayIndex = 3;
+                dgvBookBorrow.Columns["fromDate"].DisplayIndex = 4;
+                dgvBookBorrow.Columns["toDate"].DisplayIndex = 5;
+                dgvBookBorrow.Columns["GiaBorrow"].DisplayIndex = 6;
+                dgvBookBorrow.Columns["GiveBack"].DisplayIndex = 7;
+
+                
+            } 
+                
+        }
+
+        private void txtSearchBorrow_TextChanged(object sender, EventArgs e)
+        {
+            var borrowData = db.Borrows.Select(x => new
+            {
+                x.ID,
+                x.User.MSSV,
+                x.Book.TenSach,
+                x.Quantity,
+                x.fromDate,
+                x.toDate,
+                x.Price
+            }).Where(x => x.MSSV.Contains(txtSearchBorrow.Text) || x.TenSach.Contains(txtSearchBorrow.Text)).ToList();
+            var formattedData = borrowData.Select(x => new
+            {
+                x.ID,
+                x.MSSV,
+                x.TenSach,
+                x.Quantity,
+                fromDate = x.fromDate.HasValue ? x.fromDate.Value.ToString("MM/dd/yyyy") : "N/A",
+                toDate = x.toDate.HasValue ? x.toDate.Value.ToString("MM/dd/yyyy") : "N/A",
+                x.Price
+            }).ToList();
+            dgvBookBorrow.DataSource = formattedData;
+            dgvBookBorrow.Columns["IDBorrow"].DisplayIndex = 0;
+            dgvBookBorrow.Columns["MSSV"].DisplayIndex = 1;
+            dgvBookBorrow.Columns["SachBorrow"].DisplayIndex = 2;
+            dgvBookBorrow.Columns["SoLuongBorrow"].DisplayIndex = 3;
+            dgvBookBorrow.Columns["fromDate"].DisplayIndex = 4;
+            dgvBookBorrow.Columns["toDate"].DisplayIndex = 5;
+            dgvBookBorrow.Columns["GiaBorrow"].DisplayIndex = 6;
+            dgvBookBorrow.Columns["GiveBack"].DisplayIndex = 7;
         }
     }
 }

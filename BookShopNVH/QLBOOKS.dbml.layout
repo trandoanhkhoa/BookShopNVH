@@ -2,29 +2,49 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QLBOOKS">
   <DataContextMoniker Name="/QLBOOKSDataContext" />
   <nestedChildShapes>
-    <classShape Id="9c0eaba8-ece9-4762-be28-77a1d8273245" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
+    <classShape Id="49ee057c-bccf-4fb7-9ff8-ba0ecf7df31f" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/QLBOOKSDataContext/Book" />
       <nestedChildShapes>
-        <elementListCompartment Id="dea317a4-46e2-41c2-9983-0ca14b364650" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="64385033-b091-4356-9223-05f1d82a72b0" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="479b6c2d-385a-45ea-bd29-fbcab61715e1" absoluteBounds="1.75, 4.125, 2, 1.7708968098958326">
+    <classShape Id="f3b16a31-1314-49cb-a501-4e669a267169" absoluteBounds="3.5, 5.125, 2, 1.7708968098958326">
       <DataClassMoniker Name="/QLBOOKSDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="f943e75a-72f2-46bf-a7e0-a6d3bfbb31f1" absoluteBounds="1.7650000000000001, 4.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="edf1332b-c756-41b7-a506-f2f7ede5bdf1" absoluteBounds="3.515, 5.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ba46eaa5-594a-4601-82ac-b403adb3ed6b" absoluteBounds="0.75, 1.375, 2, 1.3862939453125003">
+    <classShape Id="240facbc-1742-4665-8b51-5ac368143ff3" absoluteBounds="6.25, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QLBOOKSDataContext/Borrow" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d02ddda9-1632-4999-ba58-dddcecfe73ea" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf18a0d9-98fb-4c17-b61b-8019f88a5ca7" absoluteBounds="0.75, 1.375, 2, 1.3862939453125003">
       <DataClassMoniker Name="/QLBOOKSDataContext/TypeBook" />
       <nestedChildShapes>
-        <elementListCompartment Id="29af6a46-df00-41a5-8652-dfb8636ca6a2" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="81120d37-17be-4da4-9501-9f5fff8efd1b" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 1.95274983723958); (6.25 : 1.95274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBOOKSDataContext/Book/Book_Borrow" />
+      <nodes>
+        <classShapeMoniker Id="49ee057c-bccf-4fb7-9ff8-ba0ecf7df31f" />
+        <classShapeMoniker Id="240facbc-1742-4665-8b51-5ac368143ff3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.01044840494792); (7.25 : 6.01044840494792); (7.25 : 3.03049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBOOKSDataContext/User/User_Borrow" />
+      <nodes>
+        <classShapeMoniker Id="f3b16a31-1314-49cb-a501-4e669a267169" />
+        <classShapeMoniker Id="240facbc-1742-4665-8b51-5ac368143ff3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/QLBOOKSDataContext/TypeBook/TypeBook_Book" />
       <nodes>
-        <classShapeMoniker Id="ba46eaa5-594a-4601-82ac-b403adb3ed6b" />
-        <classShapeMoniker Id="9c0eaba8-ece9-4762-be28-77a1d8273245" />
+        <classShapeMoniker Id="cf18a0d9-98fb-4c17-b61b-8019f88a5ca7" />
+        <classShapeMoniker Id="49ee057c-bccf-4fb7-9ff8-ba0ecf7df31f" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

@@ -59,6 +59,12 @@
     <Compile Include="AddBookForm.Designer.cs">
       <DependentUpon>AddBookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddBorrowBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBorrowBook.Designer.cs">
+      <DependentUpon>AddBorrowBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTypeBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,18 +120,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBOOKS.dbml</DependentUpon>
     </Compile>
-    <Compile Include="QLBOOKSDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBOOKSDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLBOOKSDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBOOKSDataSet1.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddBookForm.resx">
       <DependentUpon>AddBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddBorrowBook.resx">
+      <DependentUpon>AddBorrowBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTypeBookForm.resx">
       <DependentUpon>AddTypeBookForm.cs</DependentUpon>
@@ -138,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditTypeBookForm.resx">
       <DependentUpon>EditTypeBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -174,28 +176,6 @@
     </None>
     <None Include="QLBOOKS.dbml.layout">
       <DependentUpon>QLBOOKS.dbml</DependentUpon>
-    </None>
-    <None Include="QLBOOKSDataSet.xsc">
-      <DependentUpon>QLBOOKSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLBOOKSDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBOOKSDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBOOKSDataSet.xss">
-      <DependentUpon>QLBOOKSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLBOOKSDataSet1.xsc">
-      <DependentUpon>QLBOOKSDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="QLBOOKSDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBOOKSDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBOOKSDataSet1.xss">
-      <DependentUpon>QLBOOKSDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

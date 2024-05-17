@@ -9,6 +9,7 @@
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="LoaiSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Book_Borrow" Member="Borrows" ThisKey="ID" OtherKey="IDBooks" Type="Borrow" />
       <Association Name="TypeBook_Book" Member="TypeBook" ThisKey="LoaiSach" OtherKey="ID" Type="TypeBook" IsForeignKey="true" />
     </Type>
   </Table>
@@ -19,6 +20,20 @@
       <Column Name="Matkhau" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="TenSinhVien" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MSSV" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="User_Borrow" Member="Borrows" ThisKey="ID" OtherKey="IDUser" Type="Borrow" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Borrow" Member="Borrows">
+    <Type Name="Borrow">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDBooks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fromDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="toDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Book_Borrow" Member="Book" ThisKey="IDBooks" OtherKey="ID" Type="Book" IsForeignKey="true" />
+      <Association Name="User_Borrow" Member="User" ThisKey="IDUser" OtherKey="ID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TypeBooks" Member="TypeBooks">

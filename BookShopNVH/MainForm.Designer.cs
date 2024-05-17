@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cbbCategoriesBook = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -42,22 +42,54 @@
             this.btnCreateButton = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBook = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tacgiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loaiSachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tacgia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.qLBOOKSDataSet1 = new BookShopNVH.QLBOOKSDataSet1();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dgvTypeBook = new System.Windows.Forms.DataGridView();
+            this.IDTypeBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditTypeBook = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteTypeBook = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCreateTypeBooks = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.txtMSSVBorrow = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnGiveBackAll = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearchBorrow = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvBookBorrow = new System.Windows.Forms.DataGridView();
+            this.IDBorrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MSSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SachBorrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fromDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongBorrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaBorrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiveBack = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCreateBorrowBook = new Guna.UI2.WinForms.Guna2Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvUser = new System.Windows.Forms.DataGridView();
+            this.IDUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditUser = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteUser = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCreateUser = new Guna.UI2.WinForms.Guna2Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -67,44 +99,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.qLBOOKSDataSet = new BookShopNVH.QLBOOKSDataSet();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new BookShopNVH.QLBOOKSDataSetTableAdapters.BooksTableAdapter();
-            this.booksTableAdapter1 = new BookShopNVH.QLBOOKSDataSet1TableAdapters.BooksTableAdapter();
-            this.dgvTypeBook = new System.Windows.Forms.DataGridView();
-            this.IDTypeBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TheLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditTypeBook = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeleteTypeBook = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCreateUser = new Guna.UI2.WinForms.Guna2Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSinhVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditUser = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeleteUser = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLBOOKSDataSet1)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTypeBook)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookBorrow)).BeginInit();
+            this.panel4.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
+            this.panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLBOOKSDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTypeBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -225,35 +235,33 @@
             this.dgvBook.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvBook.AutoGenerateColumns = false;
             this.dgvBook.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.tenSachDataGridViewTextBoxColumn,
-            this.tacgiaDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.loaiSachDataGridViewTextBoxColumn,
-            this.soLuongDataGridViewTextBoxColumn,
+            this.IDBook,
+            this.Tacgia,
+            this.TenSach,
+            this.LoaiSach,
+            this.SoLuong,
+            this.Gia,
             this.Edit,
             this.Delete});
-            this.dgvBook.DataSource = this.booksBindingSource1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBook.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBook.EnableHeadersVisualStyles = false;
             this.dgvBook.Location = new System.Drawing.Point(3, 128);
             this.dgvBook.MultiSelect = false;
@@ -265,54 +273,53 @@
             this.dgvBook.TabIndex = 0;
             this.dgvBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBook_CellClick);
             // 
-            // ID
+            // IDBook
             // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 125;
+            this.IDBook.DataPropertyName = "ID";
+            this.IDBook.HeaderText = "ID";
+            this.IDBook.MinimumWidth = 6;
+            this.IDBook.Name = "IDBook";
+            this.IDBook.Width = 50;
             // 
-            // tenSachDataGridViewTextBoxColumn
+            // Tacgia
             // 
-            this.tenSachDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenSachDataGridViewTextBoxColumn.DataPropertyName = "TenSach";
-            this.tenSachDataGridViewTextBoxColumn.HeaderText = "Tên sách";
-            this.tenSachDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenSachDataGridViewTextBoxColumn.Name = "tenSachDataGridViewTextBoxColumn";
+            this.Tacgia.DataPropertyName = "Tacgia";
+            this.Tacgia.HeaderText = "Tác giả";
+            this.Tacgia.MinimumWidth = 6;
+            this.Tacgia.Name = "Tacgia";
+            this.Tacgia.Width = 125;
             // 
-            // tacgiaDataGridViewTextBoxColumn
+            // TenSach
             // 
-            this.tacgiaDataGridViewTextBoxColumn.DataPropertyName = "Tacgia";
-            this.tacgiaDataGridViewTextBoxColumn.HeaderText = "Tác giả";
-            this.tacgiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tacgiaDataGridViewTextBoxColumn.Name = "tacgiaDataGridViewTextBoxColumn";
-            this.tacgiaDataGridViewTextBoxColumn.Width = 125;
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "Tên sách";
+            this.TenSach.MinimumWidth = 6;
+            this.TenSach.Name = "TenSach";
+            this.TenSach.Width = 125;
             // 
-            // priceDataGridViewTextBoxColumn
+            // LoaiSach
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Giá";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
+            this.LoaiSach.DataPropertyName = "TheLoai";
+            this.LoaiSach.HeaderText = "Thể loại";
+            this.LoaiSach.MinimumWidth = 6;
+            this.LoaiSach.Name = "LoaiSach";
+            this.LoaiSach.Width = 125;
             // 
-            // loaiSachDataGridViewTextBoxColumn
+            // SoLuong
             // 
-            this.loaiSachDataGridViewTextBoxColumn.DataPropertyName = "LoaiSach";
-            this.loaiSachDataGridViewTextBoxColumn.HeaderText = "Loại sách";
-            this.loaiSachDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loaiSachDataGridViewTextBoxColumn.Name = "loaiSachDataGridViewTextBoxColumn";
-            this.loaiSachDataGridViewTextBoxColumn.Width = 125;
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 125;
             // 
-            // soLuongDataGridViewTextBoxColumn
+            // Gia
             // 
-            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.soLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
-            this.soLuongDataGridViewTextBoxColumn.Width = 125;
+            this.Gia.DataPropertyName = "Price";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
+            this.Gia.Width = 125;
             // 
             // Edit
             // 
@@ -332,16 +339,6 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 50;
             // 
-            // booksBindingSource1
-            // 
-            this.booksBindingSource1.DataMember = "Books";
-            this.booksBindingSource1.DataSource = this.qLBOOKSDataSet1;
-            // 
-            // qLBOOKSDataSet1
-            // 
-            this.qLBOOKSDataSet1.DataSetName = "QLBOOKSDataSet1";
-            this.qLBOOKSDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.dgvTypeBook);
@@ -352,6 +349,75 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "TypeBooks";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dgvTypeBook
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTypeBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvTypeBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTypeBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDTypeBook,
+            this.TheLoai,
+            this.Mota,
+            this.EditTypeBook,
+            this.DeleteTypeBook});
+            this.dgvTypeBook.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTypeBook.EnableHeadersVisualStyles = false;
+            this.dgvTypeBook.Location = new System.Drawing.Point(0, 156);
+            this.dgvTypeBook.Name = "dgvTypeBook";
+            this.dgvTypeBook.RowHeadersWidth = 51;
+            this.dgvTypeBook.RowTemplate.Height = 24;
+            this.dgvTypeBook.Size = new System.Drawing.Size(828, 401);
+            this.dgvTypeBook.TabIndex = 4;
+            this.dgvTypeBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTypeBook_CellClick);
+            // 
+            // IDTypeBook
+            // 
+            this.IDTypeBook.DataPropertyName = "ID";
+            this.IDTypeBook.HeaderText = "ID";
+            this.IDTypeBook.MinimumWidth = 6;
+            this.IDTypeBook.Name = "IDTypeBook";
+            this.IDTypeBook.Width = 125;
+            // 
+            // TheLoai
+            // 
+            this.TheLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TheLoai.DataPropertyName = "TheLoai";
+            this.TheLoai.HeaderText = "Thể loại";
+            this.TheLoai.MinimumWidth = 6;
+            this.TheLoai.Name = "TheLoai";
+            // 
+            // Mota
+            // 
+            this.Mota.DataPropertyName = "Mota";
+            this.Mota.HeaderText = "Mô tả";
+            this.Mota.MinimumWidth = 6;
+            this.Mota.Name = "Mota";
+            this.Mota.Width = 125;
+            // 
+            // EditTypeBook
+            // 
+            this.EditTypeBook.HeaderText = "";
+            this.EditTypeBook.Image = ((System.Drawing.Image)(resources.GetObject("EditTypeBook.Image")));
+            this.EditTypeBook.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditTypeBook.MinimumWidth = 6;
+            this.EditTypeBook.Name = "EditTypeBook";
+            this.EditTypeBook.Width = 125;
+            // 
+            // DeleteTypeBook
+            // 
+            this.DeleteTypeBook.HeaderText = "";
+            this.DeleteTypeBook.Image = ((System.Drawing.Image)(resources.GetObject("DeleteTypeBook.Image")));
+            this.DeleteTypeBook.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.DeleteTypeBook.MinimumWidth = 6;
+            this.DeleteTypeBook.Name = "DeleteTypeBook";
+            this.DeleteTypeBook.Width = 125;
             // 
             // panel2
             // 
@@ -388,18 +454,242 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(8, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 32);
+            this.label4.Size = new System.Drawing.Size(187, 32);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Book List";
+            this.label4.Text = "TypeBook List";
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.txtMSSVBorrow);
+            this.tabPage6.Controls.Add(this.label8);
+            this.tabPage6.Controls.Add(this.btnGiveBackAll);
+            this.tabPage6.Controls.Add(this.txtSearchBorrow);
+            this.tabPage6.Controls.Add(this.label7);
+            this.tabPage6.Controls.Add(this.dgvBookBorrow);
+            this.tabPage6.Controls.Add(this.panel4);
             this.tabPage6.Location = new System.Drawing.Point(184, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(828, 557);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Manage Book";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // txtMSSVBorrow
+            // 
+            this.txtMSSVBorrow.BorderRadius = 12;
+            this.txtMSSVBorrow.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMSSVBorrow.DefaultText = "";
+            this.txtMSSVBorrow.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMSSVBorrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMSSVBorrow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMSSVBorrow.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMSSVBorrow.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMSSVBorrow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMSSVBorrow.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMSSVBorrow.Location = new System.Drawing.Point(433, 86);
+            this.txtMSSVBorrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMSSVBorrow.Name = "txtMSSVBorrow";
+            this.txtMSSVBorrow.PasswordChar = '\0';
+            this.txtMSSVBorrow.PlaceholderText = "";
+            this.txtMSSVBorrow.SelectedText = "";
+            this.txtMSSVBorrow.Size = new System.Drawing.Size(212, 33);
+            this.txtMSSVBorrow.TabIndex = 11;
+            this.txtMSSVBorrow.TextChanged += new System.EventHandler(this.txtMSSVBorrow_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(429, 63);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 19);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "MSSV";
+            // 
+            // btnGiveBackAll
+            // 
+            this.btnGiveBackAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGiveBackAll.BorderRadius = 12;
+            this.btnGiveBackAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGiveBackAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGiveBackAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGiveBackAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGiveBackAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGiveBackAll.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGiveBackAll.ForeColor = System.Drawing.Color.White;
+            this.btnGiveBackAll.Location = new System.Drawing.Point(651, 86);
+            this.btnGiveBackAll.Name = "btnGiveBackAll";
+            this.btnGiveBackAll.Size = new System.Drawing.Size(169, 35);
+            this.btnGiveBackAll.TabIndex = 9;
+            this.btnGiveBackAll.Text = "Give Back All";
+            // 
+            // txtSearchBorrow
+            // 
+            this.txtSearchBorrow.BorderRadius = 12;
+            this.txtSearchBorrow.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchBorrow.DefaultText = "";
+            this.txtSearchBorrow.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchBorrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchBorrow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchBorrow.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchBorrow.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchBorrow.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearchBorrow.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchBorrow.Location = new System.Drawing.Point(14, 88);
+            this.txtSearchBorrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchBorrow.Name = "txtSearchBorrow";
+            this.txtSearchBorrow.PasswordChar = '\0';
+            this.txtSearchBorrow.PlaceholderText = "";
+            this.txtSearchBorrow.SelectedText = "";
+            this.txtSearchBorrow.Size = new System.Drawing.Size(212, 33);
+            this.txtSearchBorrow.TabIndex = 8;
+            this.txtSearchBorrow.TextChanged += new System.EventHandler(this.txtSearchBorrow_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 19);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Search";
+            // 
+            // dgvBookBorrow
+            // 
+            this.dgvBookBorrow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookBorrow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvBookBorrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBookBorrow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDBorrow,
+            this.MSSV,
+            this.SachBorrow,
+            this.fromDate,
+            this.toDate,
+            this.SoLuongBorrow,
+            this.GiaBorrow,
+            this.GiveBack});
+            this.dgvBookBorrow.EnableHeadersVisualStyles = false;
+            this.dgvBookBorrow.Location = new System.Drawing.Point(0, 147);
+            this.dgvBookBorrow.Name = "dgvBookBorrow";
+            this.dgvBookBorrow.RowHeadersWidth = 51;
+            this.dgvBookBorrow.RowTemplate.Height = 24;
+            this.dgvBookBorrow.Size = new System.Drawing.Size(828, 410);
+            this.dgvBookBorrow.TabIndex = 6;
+            this.dgvBookBorrow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBookBorrow_CellClick);
+            // 
+            // IDBorrow
+            // 
+            this.IDBorrow.DataPropertyName = "ID";
+            this.IDBorrow.HeaderText = "ID";
+            this.IDBorrow.MinimumWidth = 6;
+            this.IDBorrow.Name = "IDBorrow";
+            this.IDBorrow.Width = 50;
+            // 
+            // MSSV
+            // 
+            this.MSSV.DataPropertyName = "MSSV";
+            this.MSSV.HeaderText = "MSSV";
+            this.MSSV.MinimumWidth = 6;
+            this.MSSV.Name = "MSSV";
+            this.MSSV.Width = 125;
+            // 
+            // SachBorrow
+            // 
+            this.SachBorrow.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SachBorrow.DataPropertyName = "TenSach";
+            this.SachBorrow.HeaderText = "Sách mượn";
+            this.SachBorrow.MinimumWidth = 6;
+            this.SachBorrow.Name = "SachBorrow";
+            // 
+            // fromDate
+            // 
+            this.fromDate.DataPropertyName = "fromDate";
+            this.fromDate.HeaderText = "Từ Ngày";
+            this.fromDate.MinimumWidth = 6;
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Width = 125;
+            // 
+            // toDate
+            // 
+            this.toDate.DataPropertyName = "toDate";
+            this.toDate.HeaderText = "Đến ngày";
+            this.toDate.MinimumWidth = 6;
+            this.toDate.Name = "toDate";
+            this.toDate.Width = 125;
+            // 
+            // SoLuongBorrow
+            // 
+            this.SoLuongBorrow.DataPropertyName = "Quantity";
+            this.SoLuongBorrow.HeaderText = "SL";
+            this.SoLuongBorrow.MinimumWidth = 6;
+            this.SoLuongBorrow.Name = "SoLuongBorrow";
+            this.SoLuongBorrow.Width = 50;
+            // 
+            // GiaBorrow
+            // 
+            this.GiaBorrow.DataPropertyName = "Price";
+            this.GiaBorrow.HeaderText = "Giá Mượn";
+            this.GiaBorrow.MinimumWidth = 6;
+            this.GiaBorrow.Name = "GiaBorrow";
+            this.GiaBorrow.Width = 125;
+            // 
+            // GiveBack
+            // 
+            this.GiveBack.HeaderText = "";
+            this.GiveBack.Image = ((System.Drawing.Image)(resources.GetObject("GiveBack.Image")));
+            this.GiveBack.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.GiveBack.MinimumWidth = 6;
+            this.GiveBack.Name = "GiveBack";
+            this.GiveBack.Width = 50;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnCreateBorrowBook);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(828, 43);
+            this.panel4.TabIndex = 5;
+            // 
+            // btnCreateBorrowBook
+            // 
+            this.btnCreateBorrowBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateBorrowBook.BorderRadius = 12;
+            this.btnCreateBorrowBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateBorrowBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateBorrowBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreateBorrowBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreateBorrowBook.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCreateBorrowBook.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateBorrowBook.ForeColor = System.Drawing.Color.White;
+            this.btnCreateBorrowBook.Location = new System.Drawing.Point(727, 4);
+            this.btnCreateBorrowBook.Name = "btnCreateBorrowBook";
+            this.btnCreateBorrowBook.Size = new System.Drawing.Size(97, 35);
+            this.btnCreateBorrowBook.TabIndex = 2;
+            this.btnCreateBorrowBook.Text = "Create";
+            this.btnCreateBorrowBook.Click += new System.EventHandler(this.btnCreateBorrowBook_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(8, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(279, 32);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Manage Borrow Book";
             // 
             // tabPage2
             // 
@@ -412,6 +702,134 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Users";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvUser
+            // 
+            this.dgvUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDUser,
+            this.dataGridViewTextBoxColumn2,
+            this.MatKhau,
+            this.TenSinhVien,
+            this.dataGridViewTextBoxColumn3,
+            this.EditUser,
+            this.DeleteUser});
+            this.dgvUser.EnableHeadersVisualStyles = false;
+            this.dgvUser.Location = new System.Drawing.Point(0, 156);
+            this.dgvUser.Name = "dgvUser";
+            this.dgvUser.RowHeadersWidth = 51;
+            this.dgvUser.RowTemplate.Height = 24;
+            this.dgvUser.Size = new System.Drawing.Size(828, 401);
+            this.dgvUser.TabIndex = 6;
+            this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
+            // 
+            // IDUser
+            // 
+            this.IDUser.DataPropertyName = "ID";
+            this.IDUser.HeaderText = "ID";
+            this.IDUser.MinimumWidth = 6;
+            this.IDUser.Name = "IDUser";
+            this.IDUser.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Taikhoan";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tài Khoản";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "Matkhau";
+            this.MatKhau.HeaderText = "Mật Khẩu";
+            this.MatKhau.MinimumWidth = 6;
+            this.MatKhau.Name = "MatKhau";
+            this.MatKhau.Width = 125;
+            // 
+            // TenSinhVien
+            // 
+            this.TenSinhVien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenSinhVien.DataPropertyName = "TenSinhVien";
+            this.TenSinhVien.HeaderText = "Tên Sinh Viên";
+            this.TenSinhVien.MinimumWidth = 6;
+            this.TenSinhVien.Name = "TenSinhVien";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MSSV";
+            this.dataGridViewTextBoxColumn3.HeaderText = "MSSV";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // EditUser
+            // 
+            this.EditUser.HeaderText = "";
+            this.EditUser.Image = ((System.Drawing.Image)(resources.GetObject("EditUser.Image")));
+            this.EditUser.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditUser.MinimumWidth = 6;
+            this.EditUser.Name = "EditUser";
+            this.EditUser.Width = 50;
+            // 
+            // DeleteUser
+            // 
+            this.DeleteUser.HeaderText = "";
+            this.DeleteUser.Image = ((System.Drawing.Image)(resources.GetObject("DeleteUser.Image")));
+            this.DeleteUser.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.DeleteUser.MinimumWidth = 6;
+            this.DeleteUser.Name = "DeleteUser";
+            this.DeleteUser.Width = 50;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnCreateUser);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(822, 43);
+            this.panel3.TabIndex = 5;
+            // 
+            // btnCreateUser
+            // 
+            this.btnCreateUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateUser.BorderRadius = 12;
+            this.btnCreateUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreateUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreateUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCreateUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateUser.ForeColor = System.Drawing.Color.White;
+            this.btnCreateUser.Location = new System.Drawing.Point(721, 4);
+            this.btnCreateUser.Name = "btnCreateUser";
+            this.btnCreateUser.Size = new System.Drawing.Size(97, 35);
+            this.btnCreateUser.TabIndex = 2;
+            this.btnCreateUser.Text = "Create";
+            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(8, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(138, 32);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Users List";
             // 
             // tabPage3
             // 
@@ -528,221 +946,6 @@
             this.guna2Panel2.Size = new System.Drawing.Size(1016, 565);
             this.guna2Panel2.TabIndex = 2;
             // 
-            // qLBOOKSDataSet
-            // 
-            this.qLBOOKSDataSet.DataSetName = "QLBOOKSDataSet";
-            this.qLBOOKSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "Books";
-            this.booksBindingSource.DataSource = this.qLBOOKSDataSet;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
-            // 
-            // booksTableAdapter1
-            // 
-            this.booksTableAdapter1.ClearBeforeFill = true;
-            // 
-            // dgvTypeBook
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTypeBook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTypeBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTypeBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDTypeBook,
-            this.TheLoai,
-            this.Mota,
-            this.EditTypeBook,
-            this.DeleteTypeBook});
-            this.dgvTypeBook.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvTypeBook.EnableHeadersVisualStyles = false;
-            this.dgvTypeBook.Location = new System.Drawing.Point(0, 156);
-            this.dgvTypeBook.Name = "dgvTypeBook";
-            this.dgvTypeBook.RowHeadersWidth = 51;
-            this.dgvTypeBook.RowTemplate.Height = 24;
-            this.dgvTypeBook.Size = new System.Drawing.Size(828, 401);
-            this.dgvTypeBook.TabIndex = 4;
-            this.dgvTypeBook.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTypeBook_CellClick);
-            // 
-            // IDTypeBook
-            // 
-            this.IDTypeBook.DataPropertyName = "ID";
-            this.IDTypeBook.HeaderText = "ID";
-            this.IDTypeBook.MinimumWidth = 6;
-            this.IDTypeBook.Name = "IDTypeBook";
-            this.IDTypeBook.Width = 125;
-            // 
-            // TheLoai
-            // 
-            this.TheLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TheLoai.DataPropertyName = "TheLoai";
-            this.TheLoai.HeaderText = "Thể loại";
-            this.TheLoai.MinimumWidth = 6;
-            this.TheLoai.Name = "TheLoai";
-            // 
-            // Mota
-            // 
-            this.Mota.DataPropertyName = "Mota";
-            this.Mota.HeaderText = "Mô tả";
-            this.Mota.MinimumWidth = 6;
-            this.Mota.Name = "Mota";
-            this.Mota.Width = 125;
-            // 
-            // EditTypeBook
-            // 
-            this.EditTypeBook.HeaderText = "";
-            this.EditTypeBook.Image = ((System.Drawing.Image)(resources.GetObject("EditTypeBook.Image")));
-            this.EditTypeBook.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditTypeBook.MinimumWidth = 6;
-            this.EditTypeBook.Name = "EditTypeBook";
-            this.EditTypeBook.Width = 125;
-            // 
-            // DeleteTypeBook
-            // 
-            this.DeleteTypeBook.HeaderText = "";
-            this.DeleteTypeBook.Image = ((System.Drawing.Image)(resources.GetObject("DeleteTypeBook.Image")));
-            this.DeleteTypeBook.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.DeleteTypeBook.MinimumWidth = 6;
-            this.DeleteTypeBook.Name = "DeleteTypeBook";
-            this.DeleteTypeBook.Width = 125;
-            // 
-            // dgvUser
-            // 
-            this.dgvUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.MatKhau,
-            this.TenSinhVien,
-            this.dataGridViewTextBoxColumn3,
-            this.EditUser,
-            this.DeleteUser});
-            this.dgvUser.EnableHeadersVisualStyles = false;
-            this.dgvUser.Location = new System.Drawing.Point(0, 156);
-            this.dgvUser.Name = "dgvUser";
-            this.dgvUser.RowHeadersWidth = 51;
-            this.dgvUser.RowTemplate.Height = 24;
-            this.dgvUser.Size = new System.Drawing.Size(828, 401);
-            this.dgvUser.TabIndex = 6;
-            this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnCreateUser);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(822, 43);
-            this.panel3.TabIndex = 5;
-            // 
-            // btnCreateUser
-            // 
-            this.btnCreateUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateUser.BorderRadius = 12;
-            this.btnCreateUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCreateUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCreateUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnCreateUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateUser.ForeColor = System.Drawing.Color.White;
-            this.btnCreateUser.Location = new System.Drawing.Point(721, 4);
-            this.btnCreateUser.Name = "btnCreateUser";
-            this.btnCreateUser.Size = new System.Drawing.Size(97, 35);
-            this.btnCreateUser.TabIndex = 2;
-            this.btnCreateUser.Text = "Create";
-            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(8, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 32);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Users List";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Taikhoan";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tài Khoản";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.DataPropertyName = "Matkhau";
-            this.MatKhau.HeaderText = "Mật Khẩu";
-            this.MatKhau.MinimumWidth = 6;
-            this.MatKhau.Name = "MatKhau";
-            this.MatKhau.Width = 125;
-            // 
-            // TenSinhVien
-            // 
-            this.TenSinhVien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenSinhVien.DataPropertyName = "TenSinhVien";
-            this.TenSinhVien.HeaderText = "Tên Sinh Viên";
-            this.TenSinhVien.MinimumWidth = 6;
-            this.TenSinhVien.Name = "TenSinhVien";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MSSV";
-            this.dataGridViewTextBoxColumn3.HeaderText = "MSSV";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // EditUser
-            // 
-            this.EditUser.HeaderText = "";
-            this.EditUser.Image = ((System.Drawing.Image)(resources.GetObject("EditUser.Image")));
-            this.EditUser.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditUser.MinimumWidth = 6;
-            this.EditUser.Name = "EditUser";
-            this.EditUser.Width = 50;
-            // 
-            // DeleteUser
-            // 
-            this.DeleteUser.HeaderText = "";
-            this.DeleteUser.Image = ((System.Drawing.Image)(resources.GetObject("DeleteUser.Image")));
-            this.DeleteUser.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.DeleteUser.MinimumWidth = 6;
-            this.DeleteUser.Name = "DeleteUser";
-            this.DeleteUser.Width = 50;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -761,22 +964,23 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLBOOKSDataSet1)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTypeBook)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBookBorrow)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.qLBOOKSDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTypeBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -803,20 +1007,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
-        private QLBOOKSDataSet qLBOOKSDataSet;
+        
         private System.Windows.Forms.BindingSource booksBindingSource;
-        private QLBOOKSDataSetTableAdapters.BooksTableAdapter booksTableAdapter;
-        private QLBOOKSDataSet1 qLBOOKSDataSet1;
-        private System.Windows.Forms.BindingSource booksBindingSource1;
-        private QLBOOKSDataSet1TableAdapters.BooksTableAdapter booksTableAdapter1;
+      
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSachDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tacgiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loaiSachDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2Button btnCreateTypeBooks;
         private System.Windows.Forms.Label label4;
@@ -830,12 +1029,37 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2Button btnCreateUser;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn EditUser;
         private System.Windows.Forms.DataGridViewImageColumn DeleteUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDBook;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tacgia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridView dgvBookBorrow;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2Button btnCreateBorrowBook;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearchBorrow;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2TextBox txtMSSVBorrow;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Button btnGiveBackAll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDBorrow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MSSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SachBorrow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fromDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongBorrow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBorrow;
+        private System.Windows.Forms.DataGridViewImageColumn GiveBack;
     }
 }

@@ -36,6 +36,9 @@ namespace BookShopNVH
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertBorrow(Borrow instance);
+    partial void UpdateBorrow(Borrow instance);
+    partial void DeleteBorrow(Borrow instance);
     partial void InsertTypeBook(TypeBook instance);
     partial void UpdateTypeBook(TypeBook instance);
     partial void DeleteTypeBook(TypeBook instance);
@@ -87,6 +90,14 @@ namespace BookShopNVH
 			}
 		}
 		
+		public System.Data.Linq.Table<Borrow> Borrows
+		{
+			get
+			{
+				return this.GetTable<Borrow>();
+			}
+		}
+		
 		public System.Data.Linq.Table<TypeBook> TypeBooks
 		{
 			get
@@ -116,6 +127,8 @@ namespace BookShopNVH
 		
 		private System.Nullable<int> _LoaiSach;
 		
+		private EntitySet<Borrow> _Borrows;
+		
 		private EntityRef<TypeBook> _TypeBook;
 		
     #region Extensibility Method Definitions
@@ -140,6 +153,7 @@ namespace BookShopNVH
 		
 		public Book()
 		{
+			this._Borrows = new EntitySet<Borrow>(new Action<Borrow>(this.attach_Borrows), new Action<Borrow>(this.detach_Borrows));
 			this._TypeBook = default(EntityRef<TypeBook>);
 			OnCreated();
 		}
@@ -288,6 +302,19 @@ namespace BookShopNVH
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Book_Borrow", Storage="_Borrows", ThisKey="ID", OtherKey="IDBooks")]
+		public EntitySet<Borrow> Borrows
+		{
+			get
+			{
+				return this._Borrows;
+			}
+			set
+			{
+				this._Borrows.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeBook_Book", Storage="_TypeBook", ThisKey="LoaiSach", OtherKey="ID", IsForeignKey=true)]
 		public TypeBook TypeBook
 		{
@@ -341,6 +368,18 @@ namespace BookShopNVH
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_Borrows(Borrow entity)
+		{
+			this.SendPropertyChanging();
+			entity.Book = this;
+		}
+		
+		private void detach_Borrows(Borrow entity)
+		{
+			this.SendPropertyChanging();
+			entity.Book = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
@@ -358,6 +397,8 @@ namespace BookShopNVH
 		private string _TenSinhVien;
 		
 		private string _MSSV;
+		
+		private EntitySet<Borrow> _Borrows;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -377,6 +418,7 @@ namespace BookShopNVH
 		
 		public User()
 		{
+			this._Borrows = new EntitySet<Borrow>(new Action<Borrow>(this.attach_Borrows), new Action<Borrow>(this.detach_Borrows));
 			OnCreated();
 		}
 		
@@ -476,6 +518,319 @@ namespace BookShopNVH
 					this._MSSV = value;
 					this.SendPropertyChanged("MSSV");
 					this.OnMSSVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Borrow", Storage="_Borrows", ThisKey="ID", OtherKey="IDUser")]
+		public EntitySet<Borrow> Borrows
+		{
+			get
+			{
+				return this._Borrows;
+			}
+			set
+			{
+				this._Borrows.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Borrows(Borrow entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Borrows(Borrow entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Borrow")]
+	public partial class Borrow : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _IDUser;
+		
+		private int _IDBooks;
+		
+		private System.Nullable<System.DateTime> _fromDate;
+		
+		private System.Nullable<System.DateTime> _toDate;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<decimal> _Price;
+		
+		private EntityRef<Book> _Book;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnIDUserChanging(int value);
+    partial void OnIDUserChanged();
+    partial void OnIDBooksChanging(int value);
+    partial void OnIDBooksChanged();
+    partial void OnfromDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnfromDateChanged();
+    partial void OntoDateChanging(System.Nullable<System.DateTime> value);
+    partial void OntoDateChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnPriceChanging(System.Nullable<decimal> value);
+    partial void OnPriceChanged();
+    #endregion
+		
+		public Borrow()
+		{
+			this._Book = default(EntityRef<Book>);
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDUser", DbType="Int NOT NULL")]
+		public int IDUser
+		{
+			get
+			{
+				return this._IDUser;
+			}
+			set
+			{
+				if ((this._IDUser != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIDUserChanging(value);
+					this.SendPropertyChanging();
+					this._IDUser = value;
+					this.SendPropertyChanged("IDUser");
+					this.OnIDUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDBooks", DbType="Int NOT NULL")]
+		public int IDBooks
+		{
+			get
+			{
+				return this._IDBooks;
+			}
+			set
+			{
+				if ((this._IDBooks != value))
+				{
+					if (this._Book.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIDBooksChanging(value);
+					this.SendPropertyChanging();
+					this._IDBooks = value;
+					this.SendPropertyChanged("IDBooks");
+					this.OnIDBooksChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fromDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fromDate
+		{
+			get
+			{
+				return this._fromDate;
+			}
+			set
+			{
+				if ((this._fromDate != value))
+				{
+					this.OnfromDateChanging(value);
+					this.SendPropertyChanging();
+					this._fromDate = value;
+					this.SendPropertyChanged("fromDate");
+					this.OnfromDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_toDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> toDate
+		{
+			get
+			{
+				return this._toDate;
+			}
+			set
+			{
+				if ((this._toDate != value))
+				{
+					this.OntoDateChanging(value);
+					this.SendPropertyChanging();
+					this._toDate = value;
+					this.SendPropertyChanged("toDate");
+					this.OntoDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Book_Borrow", Storage="_Book", ThisKey="IDBooks", OtherKey="ID", IsForeignKey=true)]
+		public Book Book
+		{
+			get
+			{
+				return this._Book.Entity;
+			}
+			set
+			{
+				Book previousValue = this._Book.Entity;
+				if (((previousValue != value) 
+							|| (this._Book.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Book.Entity = null;
+						previousValue.Borrows.Remove(this);
+					}
+					this._Book.Entity = value;
+					if ((value != null))
+					{
+						value.Borrows.Add(this);
+						this._IDBooks = value.ID;
+					}
+					else
+					{
+						this._IDBooks = default(int);
+					}
+					this.SendPropertyChanged("Book");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Borrow", Storage="_User", ThisKey="IDUser", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Borrows.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Borrows.Add(this);
+						this._IDUser = value.ID;
+					}
+					else
+					{
+						this._IDUser = default(int);
+					}
+					this.SendPropertyChanged("User");
 				}
 			}
 		}
